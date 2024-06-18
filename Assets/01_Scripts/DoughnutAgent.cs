@@ -59,11 +59,12 @@ public class DoughnutAgent : Agent
 
     public override void OnEpisodeBegin()
     {
-        if (dieCount >= 500)
-        {
-            dieCount = 0;
-            lineController.Reset();
-        }
+        // if (dieCount >= 500)
+        // {
+        //     dieCount = 0;
+        //     lineController.Reset();
+        // }
+        lineController.Reset();
         InitMovement();
     }
 
