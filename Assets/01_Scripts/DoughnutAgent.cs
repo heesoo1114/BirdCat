@@ -56,7 +56,7 @@ public class DoughnutAgent : Agent
 
     public override void OnEpisodeBegin()
     {
-        // lineController.Reset();
+        lineController.Reset();
         InitMovement();
     }
 

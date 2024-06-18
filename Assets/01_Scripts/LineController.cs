@@ -30,6 +30,7 @@ public class LineController : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         edgeCollider = GetComponent<EdgeCollider2D>();
 
+        edgeCollider.offset = new Vector2(0, -transform.parent.position.y);
         points = new List<Vector2>();
     }
 
@@ -51,7 +52,8 @@ public class LineController : MonoBehaviour
         points.Clear();
         
         pointCount = 1;
-        lineRenderer.SetPosition(pointCount - 1, Vector3.zero);
+        lineRenderer.SetPosition(pointCount - 1, transform.parent.position);
+
         for (int i = 0; i < 100; i++)
         {
             AddPoint();
@@ -77,14 +79,14 @@ public class LineController : MonoBehaviour
     {
         Vector3 lastPoint = lineRenderer.GetPosition(pointCount - 1);
 
-        float pointPositionX = Random.Range(2f, 10f) / 4;
+        float pointPositionX = Random.Range(4f, 11f) / 3;
 
         float pointPositionY = 0f;
-        if (lastPoint.y < -3f)
+        if (lastPoint.y - transform.parent.position.y < -3f)
         {
             pointPositionY = Random.Range(2f, 8f) / 4;
         }
-        else if (lastPoint.y > 3f)
+        else if (lastPoint.y - transform.parent.position.y > 3f)
         {
             pointPositionY = Random.Range(-2f, -8f) / 4;
         }
