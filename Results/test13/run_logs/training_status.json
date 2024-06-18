@@ -1,0 +1,29 @@
+{
+    "Doughnut": {
+        "checkpoints": [
+            {
+                "steps": 10257,
+                "file_path": "D:\\GitHub\\CuteDoughnut\\Results\\test13\\Doughnut\\Doughnut-10257.onnx",
+                "reward": null,
+                "creation_time": 1718718624.1274047,
+                "auxillary_file_paths": [
+                    "D:\\GitHub\\CuteDoughnut\\Results\\test13\\Doughnut\\Doughnut-10257.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 10257,
+            "file_path": "D:\\GitHub\\CuteDoughnut\\Results\\test13\\Doughnut.onnx",
+            "reward": null,
+            "creation_time": 1718718624.1274047,
+            "auxillary_file_paths": [
+                "D:\\GitHub\\CuteDoughnut\\Results\\test13\\Doughnut\\Doughnut-10257.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
