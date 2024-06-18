@@ -50,7 +50,10 @@ public class LineController : MonoBehaviour
     public void Reset()
     {
         points.Clear();
-        
+
+        points.Add(transform.parent.position);
+        edgeCollider.points = new Vector2[0]; 
+
         pointCount = 1;
         lineRenderer.SetPosition(pointCount - 1, transform.parent.position);
 
@@ -59,8 +62,6 @@ public class LineController : MonoBehaviour
             AddPoint();
         }
         lineRenderer.enabled = true;
-        
-        edgeCollider.points = new Vector2[0]; 
     }
     
     public void AddPoint()

@@ -15,9 +15,12 @@ public class DoughnutAgent : Agent
 
     private Vector3 initPosition;
 
+    private int dieCount = 0;
+
     public override void Initialize()
     {
         lineController = transform.root.Find("LineObject").GetComponent<LineController>();
+        // lineController.Reset();
 
         initPosition = transform.localPosition;
 
@@ -56,7 +59,11 @@ public class DoughnutAgent : Agent
 
     public override void OnEpisodeBegin()
     {
-        lineController.Reset();
+        if (dieCount >= 500)
+        {
+            dieCount = 0;
+            lineController.Reset();
+        }
         InitMovement();
     }
 
@@ -69,7 +76,7 @@ public class DoughnutAgent : Agent
             Jump();
         }
 
-        AddReward(0.01f);
+        AddReward(transform.localPosition.x * 0.001f);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -88,6 +95,7 @@ public class DoughnutAgent : Agent
         {
             if (isLearning)
             {
+                dieCount++;
                 SetReward(-10f);
                 EndEpisode();
             }

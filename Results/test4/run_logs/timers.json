@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1718723578",
+        "python_version": "3.9.0 (tags/v3.9.0:9cf6752, Oct  5 2020, 15:34:40) [MSC v.1927 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\mlagents-learn D:\\GitHub\\CuteDoughnut\\ml-agents-release_20\\config\\ppo\\Doughnut.yaml --run-id=test4 --results-dir=D:\\GitHub\\CuteDoughnut\\Results",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.7.1+cu110",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1718723581"
+    },
+    "total": 2.8287702,
+    "count": 1,
+    "self": 0.0044711999999997865,
+    "children": {
+        "run_training.setup": {
+            "total": 0.10261010000000004,
+            "count": 1,
+            "self": 0.10261010000000004
+        },
+        "TrainerController.start_learning": {
+            "total": 2.7216889,
+            "count": 1,
+            "self": 0.00014090000000033243,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 2.7215343,
+                    "count": 1,
+                    "self": 2.7215343
+                },
+                "TrainerController._save_models": {
+                    "total": 1.369999999978333e-05,
+                    "count": 1,
+                    "self": 1.369999999978333e-05
+                }
+            }
+        }
+    }
+}

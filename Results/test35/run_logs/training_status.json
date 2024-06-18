@@ -1,0 +1,47 @@
+{
+    "Doughnut": {
+        "checkpoints": [
+            {
+                "steps": 71916,
+                "file_path": "D:\\GitHub\\CuteDoughnut\\Results\\test35\\Doughnut\\Doughnut-71916.onnx",
+                "reward": 105.21401596069336,
+                "creation_time": 1718749808.5419657,
+                "auxillary_file_paths": [
+                    "D:\\GitHub\\CuteDoughnut\\Results\\test35\\Doughnut\\Doughnut-71916.pt"
+                ]
+            },
+            {
+                "steps": 139237,
+                "file_path": "D:\\GitHub\\CuteDoughnut\\Results\\test35\\Doughnut\\Doughnut-139237.onnx",
+                "reward": 3.042573414530073,
+                "creation_time": 1718749955.1820252,
+                "auxillary_file_paths": [
+                    "D:\\GitHub\\CuteDoughnut\\Results\\test35\\Doughnut\\Doughnut-139237.pt"
+                ]
+            },
+            {
+                "steps": 292926,
+                "file_path": "D:\\GitHub\\CuteDoughnut\\Results\\test35\\Doughnut\\Doughnut-292926.onnx",
+                "reward": 130.5091658628212,
+                "creation_time": 1718750208.5182664,
+                "auxillary_file_paths": [
+                    "D:\\GitHub\\CuteDoughnut\\Results\\test35\\Doughnut\\Doughnut-292926.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 292926,
+            "file_path": "D:\\GitHub\\CuteDoughnut\\Results\\test35\\Doughnut.onnx",
+            "reward": 130.5091658628212,
+            "creation_time": 1718750208.5182664,
+            "auxillary_file_paths": [
+                "D:\\GitHub\\CuteDoughnut\\Results\\test35\\Doughnut\\Doughnut-292926.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
