@@ -25,6 +25,9 @@ public class LineController : MonoBehaviour
         }
     }
 
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject ai;
+
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -37,6 +40,21 @@ public class LineController : MonoBehaviour
     private void Start()
     {
         Reset();
+
+        Invoke("ObjectActivate", 3f);
+    }
+
+    private void ObjectActivate()
+    {
+        if (player != null)
+        {
+            player.SetActive(true);
+        }
+
+        if (ai != null)
+        {
+            ai.SetActive(true);
+        }
     }
 
     private void Update()

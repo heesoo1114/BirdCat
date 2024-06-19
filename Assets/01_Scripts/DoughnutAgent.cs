@@ -6,6 +6,7 @@ using UnityEngine;
 public class DoughnutAgent : Agent
 {
     [SerializeField] private bool isLearning = false;
+    [SerializeField] private bool isAuto = false;
 
     [SerializeField] private float strength = 5f;
     private float gravity = -9.81f;
@@ -16,20 +17,18 @@ public class DoughnutAgent : Agent
     private Vector3 initPosition;
 
     private int dieCount = 0;
+    private int jumpCount = 0;
 
     public override void Initialize()
     {
         lineController = transform.root.Find("LineObject").GetComponent<LineController>();
-        // lineController.Reset();
-
         initPosition = transform.localPosition;
-
         InitMovement();
     }
 
     private void Update()
     {
-        if (isLearning) return;
+        if (isAuto) return;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -48,7 +47,13 @@ public class DoughnutAgent : Agent
     private void Jump()
     {
         direction = Vector3.up * strength;
-        // lineController.AddPoint(); // for easy play
+        
+        jumpCount++;
+        if (jumpCount >= 3 && (false == isAuto))
+        {
+            jumpCount = 0;
+            lineController.AddPoint(); 
+        }
     }
 
     private void InitMovement()
@@ -59,13 +64,13 @@ public class DoughnutAgent : Agent
 
     public override void OnEpisodeBegin()
     {
-        // if (dieCount >= 500)
-        // {
-        //     dieCount = 0;
-        //     lineController.Reset();
-        // }
-        lineController.Reset();
-        InitMovement();
+        if (dieCount >= 500)
+        {
+            dieCount = 0;
+            lineController.Reset();
+        }
+        // lineController.Reset();
+        // InitMovement();
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -102,8 +107,17 @@ public class DoughnutAgent : Agent
             }
             else
             {
-                InitMovement();
-                lineController.Reset();
+                if (isAuto)
+                {
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    GameManager.Instance.LoadScene("Main");
+
+                }
+                // InitMovement();
+                // lineController.Reset();
             }
         }
     }
